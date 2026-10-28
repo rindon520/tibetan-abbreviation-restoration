@@ -4,8 +4,8 @@
 
 本项目原创代码的权利人需要决定适用许可证，确认数据使用条件，并在公开发布时提供正式 LICENSE 文件。当前状态不表示授予用户任何开源许可。现有第三方依赖按各自许可证使用。
 
-数据来源按作者提供的信息记录：《藏文缩略语词典》（谢拉编著，民族出版社），以及补充参考的《缩略语词典》（项布旺杰，四川民族出版社）。两书的出版年份、版次、具体词条对应与整理复核信息仍待补充。三份指定数据文件现已收录于当前私有仓库的 `data/`，用途与文件信息见 [data/README.md](data/README.md)。来源说明不代替公开原始数据的授权；当前收录不自动变更代码或数据的许可状态。
+数据来源按作者提供的信息记录：《藏文缩略语词典》（谢拉编著，民族出版社），以及补充参考的《缩略语词典》（项布旺杰，四川民族出版社）。两书的出版年份、版次、具体词条对应与整理复核信息仍待补充。三份指定数据文件现已收录于本仓库的 `data/`，用途与文件信息见 [data/README.md](data/README.md)。来源说明不代替公开原始数据的授权；当前收录不自动变更代码或数据的许可状态。
 
-作者本次提供的 `segment-ti.zip` 中没有 LICENSE 文件；其中 42 份原始文件已收录于当前私有仓库的 `segment-ti/`，不按本项目代码重新许可，第三方文件的许可状态仍待确认。所提供的包未包含源码引用的 `data/model`、`data/data.txt` 和 `data_bpe.txt`，不代表已提供完整分词模型。文件来源与使用边界见 [segment-ti/README.md](segment-ti/README.md) 和 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+作者本次提供的 `segment-ti.zip` 中没有 LICENSE 文件；其中 42 份原始文件已收录于本仓库的 `segment-ti/`，不按本项目代码重新许可，第三方文件的许可状态仍待确认。所提供的包未包含源码引用的 `data/model`、`data/data.txt` 和 `data_bpe.txt`，不代表已提供完整分词模型。文件来源与使用边界见 [segment-ti/README.md](segment-ti/README.md) 和 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
 论文标题、作者、单位、资助与 DOI 由投稿文件确定；不在此生成虚构的版权信息或引用信息。

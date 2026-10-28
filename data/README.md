@@ -44,7 +44,7 @@ python scripts/run_grouped_experiment.py --code-root . --raw-data-dir data --out
 
 配对语料的整理来源按作者提供的信息记录，见 [数据来源说明](../docs/data_format.md)。字符集文件在本仓库保留作者提供的文件名与内容，不据此推断其编制来源、标准版本或覆盖全部藏文字符。
 
-本次将作者指定的三个文件加入当前私有仓库，不改变 [许可状态](../LICENSE_STATUS.md)，也不另行授予数据公开再分发许可。
+本次将作者指定的三个文件加入本仓库，不改变 [许可状态](../LICENSE_STATUS.md)，也不另行授予数据公开再分发许可。
 
 ## 文件校验
 

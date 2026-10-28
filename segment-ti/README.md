@@ -63,7 +63,7 @@ segmented, status = segment_lines(
 
 ## 来源、许可与校验
 
-本目录来源为作者本次提供的 `segment-ti.zip`，未据文件名推断上游作者、机构、版本或许可证。原包没有 LICENSE 文件；本次加入私有仓库不将其重新许可为本项目原创代码。现有记录见 [第三方说明](../THIRD_PARTY_NOTICES.md) 和 [许可状态](../LICENSE_STATUS.md)。
+本目录来源为作者本次提供的 `segment-ti.zip`，未据文件名推断上游作者、机构、版本或许可证。原包没有 LICENSE 文件；本次收录不将其重新许可为本项目原创代码。现有记录见 [第三方说明](../THIRD_PARTY_NOTICES.md) 和 [许可状态](../LICENSE_STATUS.md)。
 
 原压缩包 SHA-256：
 
