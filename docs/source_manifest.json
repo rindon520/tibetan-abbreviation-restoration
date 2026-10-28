@@ -1,0 +1,453 @@
+{
+  "schema_version": 1,
+  "packaged_for": "tibetan-abbreviation-restoration",
+  "preservation": "Original files are copied, never modified by the packaging process.",
+  "modifications": {
+    "train_contextual_corrector.py": "Export complete, untruncated runtime state; original learning/scoring unchanged.",
+    "train_hybrid_selector.py": "Validate candidate alignment and class support; export portable full selector JSON.",
+    "train_edit_tagger.py": "Remove implicit duplicate OpenMP runtime override; use a clean dependency environment.",
+    "train_restore.py": "Build vocabulary after splitting and only from training examples.",
+    "segment_tibetan.py": "Resolve external segmenter working directory for portable relative-path execution.",
+    "legacy/mt5/predict.py": "Align model directory and task prefix with the paired historical training script.",
+    "scripts/run_grouped_experiment.py": "Copy corrected protocol; portable default root, stage-specific imports, strict frozen-split checks, stage environment snapshots.",
+    "scripts/train_grouped_seq2seq.py": "Portable default root, frozen corpus hash check, standard checkpoint configuration alias.",
+    "scripts/evaluate_tibnorm_external.py": "Portable default root, enforce fixed upstream commit and frozen corpus hash.",
+    "scripts/diagnose_frozen_candidates.py": "Portable root/run-dir, strict candidate alignment; fixed post-hoc scope retained.",
+    "scripts/ablate_neural_candidate.py": "Portable root/run-dir, use dev-selected correction distance, explicitly exploratory prior-test-observation scope.",
+    "scripts/run_seed_replications.py": "Portable repo/run paths; report all planned seeds without unsupported preregistration claim.",
+    "scripts/summarize_seed_runs.py": "Portable run paths and explicit matching manifest/primary-model hash checks.",
+    "figures/scripts/prepare_corrected_figure_data.py": "Use logical evidence paths when frozen experiment outputs are outside code repository.",
+    "figures/scripts/prepare_auxiliary_figure_data.py": "Portable evidence paths and grouped_model_seed directory pattern matching the package replication helper.",
+    "figures/README.md": "Current V21 six-figure mapping moved to figures/v21; earlier 160 mm plots retained as extended diagnostics.",
+    "figures/v21/build_v21_figures.py": "Exact accuracy-revision comparison/calibration/save functions adapted to public aggregate input; CA_percent=100-CER_percent complementary secondary x scale, EM labeling and child-axis tick QA; unchanged frozen measurements.",
+    "README.md": "Synchronize V21 title and figure mapping; all frozen algorithm/evaluation results unchanged.",
+    "scripts/export_aggregate_results.py": "Current Context-Aware title and explicit CA/EM/CER/segment-error definitions added to metadata; numerical metrics unchanged.",
+    "scripts/write_source_manifest.py": "Include current Chinese/English paper title in re-exported provenance metadata.",
+    "evaluate_predictions.py": "Print existing CA and segment error alongside EM/CER/TibER; metric computation and output JSON unchanged; definitions clarified in CLI help.",
+    "figures/v21/caption_updates_zh.json": "Clarify that complementary x-axis scale is percent-valued; CA proportion remains1-micro_CER."
+  },
+  "files": [
+    {
+      "path": "abbrev_restore.py",
+      "original_path": "abbrev_restore.py",
+      "original_sha256": "e0c4fb8973f398e9cecbea5082185041b5771ed91f45f83fcb46633ccb0d7b62",
+      "packaged_sha256": "e0c4fb8973f398e9cecbea5082185041b5771ed91f45f83fcb46633ccb0d7b62",
+      "changed_from_original": false
+    },
+    {
+      "path": "ablate_abbrev_restore.py",
+      "original_path": "ablate_abbrev_restore.py",
+      "original_sha256": "9cb58f5a5afc3b74cebb661e745173b210dd796632c2e4fd06cc6767f8898702",
+      "packaged_sha256": "9cb58f5a5afc3b74cebb661e745173b210dd796632c2e4fd06cc6767f8898702",
+      "changed_from_original": false
+    },
+    {
+      "path": "evaluate_predictions.py",
+      "original_path": null,
+      "original_sha256": null,
+      "packaged_sha256": "9bbc8601266d066d71bd762ab1a96e11caed1fc0c8e694df8e9323f5927513da",
+      "changed_from_original": null
+    },
+    {
+      "path": "evaluate_restore.py",
+      "original_path": "evaluate_restore.py",
+      "original_sha256": "ecf8399c813516db566a0725c511fdf83fb36f173a1f499690a84363c1113e19",
+      "packaged_sha256": "ecf8399c813516db566a0725c511fdf83fb36f173a1f499690a84363c1113e19",
+      "changed_from_original": false
+    },
+    {
+      "path": "infer_contextual.py",
+      "original_path": null,
+      "original_sha256": null,
+      "packaged_sha256": "72a4bda29ba0d09edceb925e3164e4f441fed68e78d4200619c7298563d9adc2",
+      "changed_from_original": null
+    },
+    {
+      "path": "infer_pipeline.py",
+      "original_path": null,
+      "original_sha256": null,
+      "packaged_sha256": "e62fd1a9fd95c384aeb1318aaa12baadbbe54b5e4fc0ed9e7b4d1857cb2f74ab",
+      "changed_from_original": null
+    },
+    {
+      "path": "infer_restore.py",
+      "original_path": "infer_restore.py",
+      "original_sha256": "66221998df6b3ab2ebae13c6a8d944d7e250046fa2aadf13cd87bd1459b1abf3",
+      "packaged_sha256": "66221998df6b3ab2ebae13c6a8d944d7e250046fa2aadf13cd87bd1459b1abf3",
+      "changed_from_original": false
+    },
+    {
+      "path": "infer_selector.py",
+      "original_path": null,
+      "original_sha256": null,
+      "packaged_sha256": "e90f447525803daeacf871e7aee3634bfce4fbe9788b8473f1090026cd8cd25c",
+      "changed_from_original": null
+    },
+    {
+      "path": "model_artifacts.py",
+      "original_path": null,
+      "original_sha256": null,
+      "packaged_sha256": "41a877c1047ea7f1cbd98d09cb40316abcc23b81d592e8a5b4f3feecf2ac3c86",
+      "changed_from_original": null
+    },
+    {
+      "path": "prepare_segment_data.py",
+      "original_path": "prepare_segment_data.py",
+      "original_sha256": "9e1beda866955a13a423e2c91235f85660b73bda8e91c43b48b3f681b66b04e3",
+      "packaged_sha256": "9e1beda866955a13a423e2c91235f85660b73bda8e91c43b48b3f681b66b04e3",
+      "changed_from_original": false
+    },
+    {
+      "path": "segment_tibetan.py",
+      "original_path": "segment_tibetan.py",
+      "original_sha256": "37120fec0619d26015e5a29e16e46bfea6032b7226ba0843073b9bdf1e03eab3",
+      "packaged_sha256": "e0f7d13b6d9d2ebc46778934ca73188cf81885a4093f58c9a1cd74b3eeb60fe9",
+      "changed_from_original": true
+    },
+    {
+      "path": "summarize_sci_metrics.py",
+      "original_path": "summarize_sci_metrics.py",
+      "original_sha256": "596c4de43ff584b38d558683bcb65f6880a41721351fba4af04d751de060d90e",
+      "packaged_sha256": "596c4de43ff584b38d558683bcb65f6880a41721351fba4af04d751de060d90e",
+      "changed_from_original": false
+    },
+    {
+      "path": "tibetan_syllable.py",
+      "original_path": "tibetan_syllable.py",
+      "original_sha256": "f61191accf6e475179c8556262e27caf3d8ccbf7d863f5a77efc06a47c7fcce7",
+      "packaged_sha256": "f61191accf6e475179c8556262e27caf3d8ccbf7d863f5a77efc06a47c7fcce7",
+      "changed_from_original": false
+    },
+    {
+      "path": "train_abbrev_restore.py",
+      "original_path": "train_abbrev_restore.py",
+      "original_sha256": "85ed26f46939da5cfb00905f650ea74747ad30dfe71c5c4e8408ae169ff5dfc5",
+      "packaged_sha256": "85ed26f46939da5cfb00905f650ea74747ad30dfe71c5c4e8408ae169ff5dfc5",
+      "changed_from_original": false
+    },
+    {
+      "path": "train_contextual_corrector.py",
+      "original_path": "train_contextual_corrector.py",
+      "original_sha256": "006542a09fa7c6b0d9527ff4a6ad190fdf05e92979a46b84d026767f8b135299",
+      "packaged_sha256": "3d59fa8fb0e504b126ce4c2e5a675f525f05f9e9ac6a78371a3f79c824a3705a",
+      "changed_from_original": true
+    },
+    {
+      "path": "train_edit_tagger.py",
+      "original_path": "train_edit_tagger.py",
+      "original_sha256": "62f8ef3e86f9b7d6fca295793803310554a7839c499f8fb0a6105a3ce9b2b9fe",
+      "packaged_sha256": "b3000aa579d4f0a1f0e6b15b88d2efdd2d5df3ec80e73eed8fe654c3c2170df8",
+      "changed_from_original": true
+    },
+    {
+      "path": "train_hybrid_selector.py",
+      "original_path": "train_hybrid_selector.py",
+      "original_sha256": "50a96a619686f11decf0cb82b05e4d31135cf516b53cc13c7a7be5cfb8b9e99d",
+      "packaged_sha256": "c7e25e216f0e04b335680040c763d9841ece579ea922561a8ebacc00bae6e6aa",
+      "changed_from_original": true
+    },
+    {
+      "path": "train_restore.py",
+      "original_path": "train_restore.py",
+      "original_sha256": "4cab5ba394264d791b3aabf8d81b0e3ab8c74b5199fdc8fdf0c72585a84e6529",
+      "packaged_sha256": "e3b13ab1f34607ac7f4eebcaffcb1eaf71df954d552dbc6705de98c5e0ceb5c9",
+      "changed_from_original": true
+    },
+    {
+      "path": "train_syllable_corrector.py",
+      "original_path": "train_syllable_corrector.py",
+      "original_sha256": "5732506db549f6b089f3a606f290779d84eeee99484123aa6a69b375ee76636d",
+      "packaged_sha256": "5732506db549f6b089f3a606f290779d84eeee99484123aa6a69b375ee76636d",
+      "changed_from_original": false
+    },
+    {
+      "path": "train_transducer.py",
+      "original_path": "train_transducer.py",
+      "original_sha256": "3087b6a269a1afafe337b60e451f3058882c378cbed41514891ce5a81631a941",
+      "packaged_sha256": "3087b6a269a1afafe337b60e451f3058882c378cbed41514891ce5a81631a941",
+      "changed_from_original": false
+    },
+    {
+      "path": "legacy/mt5/data_analysis.py",
+      "original_path": "data_analysis.py",
+      "original_sha256": "897a981408cad76fd2d3883d9a50fea1fa58d420bb714cc89e0f9f6cad85e9a0",
+      "packaged_sha256": "897a981408cad76fd2d3883d9a50fea1fa58d420bb714cc89e0f9f6cad85e9a0",
+      "changed_from_original": false
+    },
+    {
+      "path": "legacy/mt5/predict.py",
+      "original_path": "predict.py",
+      "original_sha256": "9ab1c9aabd17f840b46cbe9b22f18f7e68ad5341a516f212121efd705d77f97e",
+      "packaged_sha256": "7c1a1164e4aafe72f3c61f882bba61427162e14806352b6316812bd3101fb140",
+      "changed_from_original": true
+    },
+    {
+      "path": "legacy/mt5/train.py",
+      "original_path": "train.py",
+      "original_sha256": "97f2eb16c78d8b4019a81cd611ccc5bcb5001a1b692611afc33e15a7c63d19ce",
+      "packaged_sha256": "97f2eb16c78d8b4019a81cd611ccc5bcb5001a1b692611afc33e15a7c63d19ce",
+      "changed_from_original": false
+    },
+    {
+      "path": "scripts/run_grouped_experiment.py",
+      "original_path": "corrected_experiment/run_grouped_experiment.py",
+      "original_sha256": "a5e5c9c415fbd7c58c0a155ea7283d15f139b13fa447382feb10db061060b83b",
+      "packaged_sha256": "85bdbccb30be1ff91ef118730259af401b5b56d5e771662ca3ed1834f21d1fff",
+      "changed_from_original": true
+    },
+    {
+      "path": "scripts/train_grouped_seq2seq.py",
+      "original_path": "corrected_experiment/train_grouped_seq2seq.py",
+      "original_sha256": "b21f4cf4c19dc77664b6f90a95e9052516c411e365ea0afd5343dc8ad214639e",
+      "packaged_sha256": "425fbdbd30033627ae431670f17da5627713bb6912ddf002d298f506161e8bbf",
+      "changed_from_original": true
+    },
+    {
+      "path": "scripts/evaluate_tibnorm_external.py",
+      "original_path": "corrected_experiment/evaluate_tibnorm_external.py",
+      "original_sha256": "748dbd81641924ccc50a0f6bf67a0e8395c019a0dd8a2b62bcbb07a0a127ee3a",
+      "packaged_sha256": "05a66e9cbb0c1958665cd8bccdd203f526e6e2c216b85faeb08edf90f90aa332",
+      "changed_from_original": true
+    },
+    {
+      "path": "scripts/diagnose_frozen_candidates.py",
+      "original_path": "corrected_experiment/diagnose_frozen_candidates.py",
+      "original_sha256": "cf1146e12b9b57093503b76f5bebde22e52b2966d3296e69f32581d6025ae22d",
+      "packaged_sha256": "106fe83c745012c3c0b6f5f71f73adf39d5b583f5fce011e6371c4142193e769",
+      "changed_from_original": true
+    },
+    {
+      "path": "scripts/ablate_neural_candidate.py",
+      "original_path": "corrected_experiment/ablate_neural_candidate.py",
+      "original_sha256": "4dea09bc0cddc9577f200b587162ba79e7f4660011058c3fcaf2fcbb57b22127",
+      "packaged_sha256": "ec13efd2755fbf609bc520e98d3d6a1ae6bc7bdb7500345695ac1a65aa8d87ff",
+      "changed_from_original": true
+    },
+    {
+      "path": "scripts/run_seed_replications.py",
+      "original_path": "corrected_experiment/run_seed_replications.py",
+      "original_sha256": "5b8baffee890f77ad46b8c89e2598885b9214ee70073ffba285f593db226231f",
+      "packaged_sha256": "ae4fb82227861726e73e0da794751602639eb952704a2625cfa98a8fa120d509",
+      "changed_from_original": true
+    },
+    {
+      "path": "scripts/summarize_seed_runs.py",
+      "original_path": "corrected_experiment/summarize_seed_runs.py",
+      "original_sha256": "4a7cde6c7c24b8353a1b8b46805acdab9201067a5386fbfdd170a5c17abc579f",
+      "packaged_sha256": "6417097310582b05af3b6ff5ec7cf98e8d2bc9d15e163e517c73c5d01f274cbc",
+      "changed_from_original": true
+    },
+    {
+      "path": "figures/v21/build_v21_figures.py",
+      "original_path": "v21_revision/figures/accuracy_revision/build_accuracy_figures.py",
+      "original_sha256": "fafb8c87c12c0a7988662bda9bf4a8086690c4ce885a64b588e63940018a0e70",
+      "packaged_sha256": "e375f818bfaad23872b5372a18920082fae898de6f027c71e3cf34de9acb9dfc",
+      "changed_from_original": true
+    },
+    {
+      "path": "figures/v21/README.md",
+      "original_path": null,
+      "original_sha256": null,
+      "packaged_sha256": "a22f2d3788b287155b6ea9798a15f76b215396a281fdbe9ad07416ee73aedb56",
+      "changed_from_original": null
+    },
+    {
+      "path": "figures/v21/source_data/fig2_splits.csv",
+      "original_path": "v21_revision/figures/source_data/fig2_splits.csv",
+      "original_sha256": "4f716d14c13e18e2170aff51389d8edf9e471248559b37e2dfb89976a24f5de2",
+      "packaged_sha256": "4f716d14c13e18e2170aff51389d8edf9e471248559b37e2dfb89976a24f5de2",
+      "changed_from_original": false
+    },
+    {
+      "path": "figures/v21/source_data/fig4_comparison.csv",
+      "original_path": "v21_revision/figures/accuracy_revision/source_data/fig4_comparison.csv",
+      "original_sha256": "d58b87545885a3826936effa506b1940363d37ab89c3d1c56b01c61782df12d6",
+      "packaged_sha256": "d58b87545885a3826936effa506b1940363d37ab89c3d1c56b01c61782df12d6",
+      "changed_from_original": false
+    },
+    {
+      "path": "figures/v21/source_data/fig4_effect.csv",
+      "original_path": "v21_revision/figures/source_data/fig4_effect.csv",
+      "original_sha256": "1e5da5938908df48bfaf35e3847dd0695479800a82da9c44169113c9f673db63",
+      "packaged_sha256": "1e5da5938908df48bfaf35e3847dd0695479800a82da9c44169113c9f673db63",
+      "changed_from_original": false
+    },
+    {
+      "path": "figures/v21/source_data/fig4_outcomes.csv",
+      "original_path": "v21_revision/figures/source_data/fig4_outcomes.csv",
+      "original_sha256": "43a7460b5f25f6df31a61b3bf3d999409153ec65eeae46a53be5bcb7d2303f43",
+      "packaged_sha256": "43a7460b5f25f6df31a61b3bf3d999409153ec65eeae46a53be5bcb7d2303f43",
+      "changed_from_original": false
+    },
+    {
+      "path": "figures/v21/source_data/fig4_sources.csv",
+      "original_path": "v21_revision/figures/source_data/fig4_sources.csv",
+      "original_sha256": "aa26d0e3c94cb1a5f974f3d1691d8b465d9856998633d6003a3d73da908f99c9",
+      "packaged_sha256": "aa26d0e3c94cb1a5f974f3d1691d8b465d9856998633d6003a3d73da908f99c9",
+      "changed_from_original": false
+    },
+    {
+      "path": "figures/v21/source_data/fig5_calibration_thresholds.csv",
+      "original_path": "v21_revision/figures/source_data/fig5_calibration_thresholds.csv",
+      "original_sha256": "c155c29bea20005d79396627d41d87413fb9f5c89797b93e2f5e91f61d6cb41d",
+      "packaged_sha256": "c155c29bea20005d79396627d41d87413fb9f5c89797b93e2f5e91f61d6cb41d",
+      "changed_from_original": false
+    },
+    {
+      "path": "figures/v21/source_data/fig6_edit_operations.csv",
+      "original_path": "v21_revision/figures/source_data/fig6_edit_operations.csv",
+      "original_sha256": "6d1b428b700608946bdb7c6610901818bb95efa5f82ce9a6fa85f468ec75480a",
+      "packaged_sha256": "6d1b428b700608946bdb7c6610901818bb95efa5f82ce9a6fa85f468ec75480a",
+      "changed_from_original": false
+    },
+    {
+      "path": "figures/v21/source_data/fig6_qualitative_matrix.csv",
+      "original_path": "v21_revision/figures/source_data/fig6_qualitative_matrix.csv",
+      "original_sha256": "d86129e040f3456df757e38cc07bb4713c40dae1095b7f90c642a6b54959869a",
+      "packaged_sha256": "7a6bb62d3b6cda26a709d23d4a2ed4bbf4b033663ac2f862238a051bc9c44f40",
+      "changed_from_original": true
+    },
+    {
+      "path": "figures/v21/source_data/README.md",
+      "original_path": null,
+      "original_sha256": null,
+      "packaged_sha256": "96492b6f37eeb08978a1806fb24905edf8ca57a2a4247a0ddbc9ea637de3b85f",
+      "changed_from_original": null
+    },
+    {
+      "path": "figures/v21/source_data/v21_aggregate.json",
+      "original_path": null,
+      "original_sha256": null,
+      "packaged_sha256": "3581397d27f5eb05dade8443d7948d06e01088a13d8aa1350713bb6e475c3d2b",
+      "changed_from_original": null
+    },
+    {
+      "path": "scripts/export_aggregate_results.py",
+      "original_path": null,
+      "original_sha256": null,
+      "packaged_sha256": "faf8028950329693457aeaeb32d92ceb955966f15c9d35fdfbe1507a67425bdd",
+      "changed_from_original": null
+    },
+    {
+      "path": "scripts/write_source_manifest.py",
+      "original_path": null,
+      "original_sha256": null,
+      "packaged_sha256": "6074f332a48ba80070b57d91d24b82ad07453a8ca3029e729faef986fd9812ac",
+      "changed_from_original": null
+    },
+    {
+      "path": "figures/v21/caption_updates_zh.json",
+      "original_path": "v21_revision/figures/accuracy_revision/caption_updates_zh.json",
+      "original_sha256": "cf42dde758005f8809174d0bf6d3987ba667168accd5c1f2b898fae29c3029ea",
+      "packaged_sha256": "224c7528db44e9fb10ecb1ea14a3e80cca034c2faf71cd678bc8ebf25a0eda77",
+      "changed_from_original": true
+    }
+  ],
+  "figure_sources": [
+    {
+      "path": "figures/scripts/build_submission_figures.py",
+      "original_path": "publication_figures/scripts/build_submission_figures.py",
+      "original_sha256": "eae9bb96e1394503fc1ec72de5d1addc4dbb08fe680dce0a3ee69ffe50599f27",
+      "packaged_sha256": "eae9bb96e1394503fc1ec72de5d1addc4dbb08fe680dce0a3ee69ffe50599f27",
+      "changed_from_original": false
+    },
+    {
+      "path": "figures/scripts/prepare_auxiliary_figure_data.py",
+      "original_path": "publication_figures/scripts/prepare_auxiliary_figure_data.py",
+      "original_sha256": "6d69f2c5b26e856d9dad368ff0a0ce3072ba75b004c1ae01a9d8ef4264060b2b",
+      "packaged_sha256": "687e4e80e5207c8548f0147e06a7df449472fe25e46e41e67ba9acb20fc2b9c9",
+      "changed_from_original": true
+    },
+    {
+      "path": "figures/scripts/prepare_corrected_figure_data.py",
+      "original_path": "publication_figures/scripts/prepare_corrected_figure_data.py",
+      "original_sha256": "0880f3a31d464c3104c6c19c4f70b6802a2ef296c03d558266b5f06be20a3911",
+      "packaged_sha256": "59d82a39aafdc62c2674fa60a64c2ceb349f94be61efd1c8273d0580c3ca758a",
+      "changed_from_original": true
+    },
+    {
+      "path": "figures/source_data/context_components.csv",
+      "original_path": "publication_figures/source_data/context_components.csv",
+      "original_sha256": "3d14c00a98d7b7d2efa7482c0a52debb5b0ef2e4e24189a78817131e78f5631d",
+      "packaged_sha256": "3d14c00a98d7b7d2efa7482c0a52debb5b0ef2e4e24189a78817131e78f5631d",
+      "changed_from_original": false
+    },
+    {
+      "path": "figures/source_data/context_tuning.csv",
+      "original_path": "publication_figures/source_data/context_tuning.csv",
+      "original_sha256": "60daff00d73406b2659c406c97d1a42f8e047f4e583d89ac8f2810a7c4c31da2",
+      "packaged_sha256": "60daff00d73406b2659c406c97d1a42f8e047f4e583d89ac8f2810a7c4c31da2",
+      "changed_from_original": false
+    },
+    {
+      "path": "figures/source_data/edit_tuning.csv",
+      "original_path": "publication_figures/source_data/edit_tuning.csv",
+      "original_sha256": "d757a8440664598d79e1cc9d1cf289795cd07b7e9bd9027da194d627366de972",
+      "packaged_sha256": "d757a8440664598d79e1cc9d1cf289795cd07b7e9bd9027da194d627366de972",
+      "changed_from_original": false
+    },
+    {
+      "path": "figures/source_data/main_comparison.csv",
+      "original_path": "publication_figures/source_data/main_comparison.csv",
+      "original_sha256": "6b69a4e18c6d21cdc8e3ef632095da77c827c8a3e53252b2207bfefc7904f49b",
+      "packaged_sha256": "6b69a4e18c6d21cdc8e3ef632095da77c827c8a3e53252b2207bfefc7904f49b",
+      "changed_from_original": false
+    },
+    {
+      "path": "figures/source_data/neural_role.csv",
+      "original_path": "publication_figures/source_data/neural_role.csv",
+      "original_sha256": "555ad410097373fa81c965f958469ba9989d1f222b0819a0de82918788454bf9",
+      "packaged_sha256": "555ad410097373fa81c965f958469ba9989d1f222b0819a0de82918788454bf9",
+      "changed_from_original": false
+    },
+    {
+      "path": "figures/source_data/seed_replications.csv",
+      "original_path": "publication_figures/source_data/seed_replications.csv",
+      "original_sha256": "bcb562b08cccbafa759c91fce814b04fefe4917ea3fa4a833bb2e2b7243c55c5",
+      "packaged_sha256": "bcb562b08cccbafa759c91fce814b04fefe4917ea3fa4a833bb2e2b7243c55c5",
+      "changed_from_original": false
+    },
+    {
+      "path": "figures/source_data/selection_contingency.csv",
+      "original_path": "publication_figures/source_data/selection_contingency.csv",
+      "original_sha256": "ff6e393d2af86bda4d88e1ec23bde90e3e7dfdb2a8babead863a14221659bd80",
+      "packaged_sha256": "ff6e393d2af86bda4d88e1ec23bde90e3e7dfdb2a8babead863a14221659bd80",
+      "changed_from_original": false
+    },
+    {
+      "path": "figures/source_data/selection_outcomes.csv",
+      "original_path": "publication_figures/source_data/selection_outcomes.csv",
+      "original_sha256": "4007c5b9892b1ce5ff9b3382db252d17476f552674825b7acf44cbc83baca360",
+      "packaged_sha256": "4007c5b9892b1ce5ff9b3382db252d17476f552674825b7acf44cbc83baca360",
+      "changed_from_original": false
+    },
+    {
+      "path": "figures/source_data/split_summary.json",
+      "original_path": "publication_figures/source_data/split_summary.json",
+      "original_sha256": "cd59c3ea86ea6d7bfd4e14788b07bc0ab8cb200357bdd01cb7d8cdaf126aaec1",
+      "packaged_sha256": "cd59c3ea86ea6d7bfd4e14788b07bc0ab8cb200357bdd01cb7d8cdaf126aaec1",
+      "changed_from_original": false
+    },
+    {
+      "path": "figures/source_data/summary.json",
+      "original_path": "publication_figures/source_data/summary.json",
+      "original_sha256": "18ecb32ae5b73ec009ddd2663e510df8c10b16d11c9f9ca04ed3a1c8fe8bfc46",
+      "packaged_sha256": "18ecb32ae5b73ec009ddd2663e510df8c10b16d11c9f9ca04ed3a1c8fe8bfc46",
+      "changed_from_original": false
+    },
+    {
+      "path": "figures/README.md",
+      "original_path": "publication_figures/README.md",
+      "original_sha256": "084f430787c62e5ba0f7b259695993668dcbcf7a84f8a924f7917e2dead811d7",
+      "packaged_sha256": "9871fb4d5bbb0da498f1276e2da654c30d8ab40235f05d8f2916b2a13f882e36",
+      "changed_from_original": true
+    }
+  ],
+  "paper_title": "上下文感知转写与候选重排序的藏文缩略词还原方法",
+  "paper_title_en": "Context-Aware Transduction and Candidate Reranking for Tibetan Abbreviation Restoration",
+  "packaging_changes": {
+    "figures/v21/build_v21_figures.py": "2026-10-27 comment revision: figure6 qualitative lower panel shows three illustrative mechanisms and four structural relations from public metadata; frozen S/I/D and all other measurements unchanged.",
+    "figures/v21/source_data/v21_aggregate.json": "Added qualitative_fig6 metadata only; no corpus text, case examples, annotation frequencies, weights or private paths."
+  },
+  "comment_revision_date": "2026-10-27"
+}

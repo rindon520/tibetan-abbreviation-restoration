@@ -1,0 +1,754 @@
+{
+  "schema_version": 1,
+  "scope": "aggregate-only input for V21 figures 2-6; no corpus rows or model weights",
+  "split": {
+    "seed": 42,
+    "protocol": "parent_line_and_NFC_source_connected_groups_70_10_10_10",
+    "group_normalization": "NFC, grouping keys only; source and reference preserved",
+    "source_file_sha256": "1bff6b35dec9ccebdfad0c1fe6a0e1f543b359746bf890178c517144be9b6a13",
+    "restore_file_sha256": "4a168f52013f596fc35df3c416c560457377d1a27f1ee4d400324e9798a91d90",
+    "raw_line_pairs": 10820,
+    "rejected_line_pairs": 2218,
+    "trusted_segments": 9615,
+    "connected_groups": 8593,
+    "splits": {
+      "test": {
+        "samples": 961,
+        "groups": 874
+      },
+      "calibration": {
+        "samples": 962,
+        "groups": 850
+      },
+      "dev": {
+        "samples": 962,
+        "groups": 864
+      },
+      "train": {
+        "samples": 6730,
+        "groups": 6005
+      }
+    }
+  },
+  "result": {
+    "protocol": "corrected_grouped_train_dev_calibration_test",
+    "test_metrics": {
+      "identity": {
+        "samples": 961,
+        "exact_match": 0.02081165452653486,
+        "line_error_rate": 0.9791883454734651,
+        "micro_cer": 0.3332805259614242,
+        "micro_character_accuracy": 0.6667194740385758,
+        "macro_cer_mean": 0.32819651463336513,
+        "macro_cer_median": 0.3333333333333333,
+        "micro_tibetan_unit_error_rate": 0.6117160798028773,
+        "macro_tibetan_unit_error_rate_mean": 0.602391289392204,
+        "normalized_edit_similarity_mean": 0.6721556705364643,
+        "char_overlap_precision_mean": 0.9055180186669513,
+        "char_overlap_recall_mean": 0.7350401505386938,
+        "char_overlap_f1_mean": 0.808677318371616,
+        "prediction_reference_length_ratio": 0.8035565764980791,
+        "length_mae": 5.177939646201873,
+        "length_rmse": 6.274338666536366,
+        "edit_substitutions": 3151,
+        "edit_insertions": 5112,
+        "edit_deletions": 152,
+        "total_reference_codepoints": 25249,
+        "total_edit_distance": 8415,
+        "exact_count": 20
+      },
+      "global_transducer": {
+        "samples": 961,
+        "exact_match": 0.043704474505723206,
+        "line_error_rate": 0.9562955254942768,
+        "micro_cer": 0.28333795397837536,
+        "micro_character_accuracy": 0.7166620460216246,
+        "macro_cer_mean": 0.27825209248209315,
+        "macro_cer_median": 0.2777777777777778,
+        "micro_tibetan_unit_error_rate": 0.5538510452269295,
+        "macro_tibetan_unit_error_rate_mean": 0.548035694649633,
+        "normalized_edit_similarity_mean": 0.7226968812501655,
+        "char_overlap_precision_mean": 0.9420850180246115,
+        "char_overlap_recall_mean": 0.7949303635311309,
+        "char_overlap_f1_mean": 0.8590974888794486,
+        "prediction_reference_length_ratio": 0.835795477048596,
+        "length_mae": 4.387096774193548,
+        "length_rmse": 5.535055250719,
+        "edit_substitutions": 2430,
+        "edit_insertions": 4435,
+        "edit_deletions": 289,
+        "total_reference_codepoints": 25249,
+        "total_edit_distance": 7154,
+        "exact_count": 42
+      },
+      "global_plus_shad": {
+        "samples": 961,
+        "exact_match": 0.05619146722164412,
+        "line_error_rate": 0.9438085327783559,
+        "micro_cer": 0.2659511267772981,
+        "micro_character_accuracy": 0.734048873222702,
+        "macro_cer_mean": 0.25830150018895426,
+        "macro_cer_median": 0.25,
+        "micro_tibetan_unit_error_rate": 0.538271997456482,
+        "macro_tibetan_unit_error_rate_mean": 0.5284345105801049,
+        "normalized_edit_similarity_mean": 0.7425281472182713,
+        "char_overlap_precision_mean": 0.9448775899818326,
+        "char_overlap_recall_mean": 0.7980181080820535,
+        "char_overlap_f1_mean": 0.8620473794458648,
+        "prediction_reference_length_ratio": 0.835795477048596,
+        "length_mae": 4.387096774193548,
+        "length_rmse": 5.535055250719,
+        "edit_substitutions": 1997,
+        "edit_insertions": 4432,
+        "edit_deletions": 286,
+        "total_reference_codepoints": 25249,
+        "total_edit_distance": 6715,
+        "exact_count": 54
+      },
+      "global_plus_shad_vocab": {
+        "samples": 961,
+        "exact_match": 0.062434963579604576,
+        "line_error_rate": 0.9375650364203955,
+        "micro_cer": 0.24539585726167373,
+        "micro_character_accuracy": 0.7546041427383263,
+        "macro_cer_mean": 0.23949226084297146,
+        "macro_cer_median": 0.23529411764705882,
+        "micro_tibetan_unit_error_rate": 0.3961529290199507,
+        "macro_tibetan_unit_error_rate_mean": 0.40013309856723517,
+        "normalized_edit_similarity_mean": 0.7640119082420755,
+        "char_overlap_precision_mean": 0.9137624428024004,
+        "char_overlap_recall_mean": 0.8581077739715806,
+        "char_overlap_f1_mean": 0.8831260469995843,
+        "prediction_reference_length_ratio": 0.935839043130421,
+        "length_mae": 2.13111342351717,
+        "length_rmse": 2.985919087846744,
+        "edit_substitutions": 2806,
+        "edit_insertions": 2505,
+        "edit_deletions": 885,
+        "total_reference_codepoints": 25249,
+        "total_edit_distance": 6196,
+        "exact_count": 60
+      },
+      "context_raw": {
+        "samples": 961,
+        "exact_match": 0.12903225806451613,
+        "line_error_rate": 0.8709677419354839,
+        "micro_cer": 0.18634401362430195,
+        "micro_character_accuracy": 0.813655986375698,
+        "macro_cer_mean": 0.17908402771082862,
+        "macro_cer_median": 0.17142857142857143,
+        "micro_tibetan_unit_error_rate": 0.3827994595024243,
+        "macro_tibetan_unit_error_rate_mean": 0.3739108025593046,
+        "normalized_edit_similarity_mean": 0.8220429752442052,
+        "char_overlap_precision_mean": 0.9576494055313902,
+        "char_overlap_recall_mean": 0.858100859048175,
+        "char_overlap_f1_mean": 0.9023273735209215,
+        "prediction_reference_length_ratio": 0.8895401798091014,
+        "length_mae": 3.0811654526534857,
+        "length_rmse": 4.143246702311157,
+        "edit_substitutions": 1286,
+        "edit_insertions": 3104,
+        "edit_deletions": 315,
+        "total_reference_codepoints": 25249,
+        "total_edit_distance": 4705,
+        "exact_count": 124
+      },
+      "context_plus_shad": {
+        "samples": 961,
+        "exact_match": 0.1331945889698231,
+        "line_error_rate": 0.8668054110301768,
+        "micro_cer": 0.18448255376450554,
+        "micro_character_accuracy": 0.8155174462354945,
+        "macro_cer_mean": 0.176478420713445,
+        "macro_cer_median": 0.17073170731707318,
+        "micro_tibetan_unit_error_rate": 0.3809713059375248,
+        "macro_tibetan_unit_error_rate_mean": 0.37095458286271027,
+        "normalized_edit_similarity_mean": 0.8246184383768976,
+        "char_overlap_precision_mean": 0.9587551276625055,
+        "char_overlap_recall_mean": 0.8592402739445082,
+        "char_overlap_f1_mean": 0.9034494187539963,
+        "prediction_reference_length_ratio": 0.8895401798091014,
+        "length_mae": 3.0811654526534857,
+        "length_rmse": 4.143246702311157,
+        "edit_substitutions": 1239,
+        "edit_insertions": 3104,
+        "edit_deletions": 315,
+        "total_reference_codepoints": 25249,
+        "total_edit_distance": 4658,
+        "exact_count": 128
+      },
+      "contextual": {
+        "samples": 961,
+        "exact_match": 0.13527575442247658,
+        "line_error_rate": 0.8647242455775235,
+        "micro_cer": 0.17826448572220682,
+        "micro_character_accuracy": 0.8217355142777931,
+        "macro_cer_mean": 0.17193672038906188,
+        "macro_cer_median": 0.16,
+        "micro_tibetan_unit_error_rate": 0.3149193227883316,
+        "macro_tibetan_unit_error_rate_mean": 0.31739678471395155,
+        "normalized_edit_similarity_mean": 0.8316643456839246,
+        "char_overlap_precision_mean": 0.9339400549597644,
+        "char_overlap_recall_mean": 0.8977954525286191,
+        "char_overlap_f1_mean": 0.9137156513243908,
+        "prediction_reference_length_ratio": 0.958968672026615,
+        "length_mae": 1.7273673257023934,
+        "length_rmse": 2.530973580120391,
+        "edit_substitutions": 1801,
+        "edit_insertions": 1868,
+        "edit_deletions": 832,
+        "total_reference_codepoints": 25249,
+        "total_edit_distance": 4501,
+        "exact_count": 130
+      },
+      "edit_raw": {
+        "samples": 961,
+        "exact_match": 0.08636836628511967,
+        "line_error_rate": 0.9136316337148803,
+        "micro_cer": 0.21973147451384215,
+        "micro_character_accuracy": 0.7802685254861579,
+        "macro_cer_mean": 0.21112650353376777,
+        "macro_cer_median": 0.21428571428571427,
+        "micro_tibetan_unit_error_rate": 0.4693585565535331,
+        "macro_tibetan_unit_error_rate_mean": 0.45412936505303664,
+        "normalized_edit_similarity_mean": 0.7893963121749074,
+        "char_overlap_precision_mean": 0.9575753020454768,
+        "char_overlap_recall_mean": 0.8259487276045159,
+        "char_overlap_f1_mean": 0.8839440088735898,
+        "prediction_reference_length_ratio": 0.8555190304566518,
+        "length_mae": 3.8605619146722163,
+        "length_rmse": 4.957047558726838,
+        "edit_substitutions": 1378,
+        "edit_insertions": 3909,
+        "edit_deletions": 261,
+        "total_reference_codepoints": 25249,
+        "total_edit_distance": 5548,
+        "exact_count": 83
+      },
+      "edit_plus_shad": {
+        "samples": 961,
+        "exact_match": 0.08636836628511967,
+        "line_error_rate": 0.9136316337148803,
+        "micro_cer": 0.21925620816666005,
+        "micro_character_accuracy": 0.78074379183334,
+        "macro_cer_mean": 0.21059197857319895,
+        "macro_cer_median": 0.21428571428571427,
+        "micro_tibetan_unit_error_rate": 0.46880216199030283,
+        "macro_tibetan_unit_error_rate_mean": 0.45336916008620354,
+        "normalized_edit_similarity_mean": 0.7899068236879455,
+        "char_overlap_precision_mean": 0.9577045695270148,
+        "char_overlap_recall_mean": 0.8260885407271288,
+        "char_overlap_f1_mean": 0.8840791529472196,
+        "prediction_reference_length_ratio": 0.8555190304566518,
+        "length_mae": 3.8605619146722163,
+        "length_rmse": 4.957047558726838,
+        "edit_substitutions": 1366,
+        "edit_insertions": 3909,
+        "edit_deletions": 261,
+        "total_reference_codepoints": 25249,
+        "total_edit_distance": 5536,
+        "exact_count": 83
+      },
+      "edit_tagger": {
+        "samples": 961,
+        "exact_match": 0.0967741935483871,
+        "line_error_rate": 0.9032258064516129,
+        "micro_cer": 0.2047209790486752,
+        "micro_character_accuracy": 0.7952790209513247,
+        "macro_cer_mean": 0.1982410556229341,
+        "macro_cer_median": 0.19047619047619047,
+        "micro_tibetan_unit_error_rate": 0.3490183610205866,
+        "macro_tibetan_unit_error_rate_mean": 0.3495331801415999,
+        "normalized_edit_similarity_mean": 0.8054014034121598,
+        "char_overlap_precision_mean": 0.9274625895473109,
+        "char_overlap_recall_mean": 0.8772515643977912,
+        "char_overlap_f1_mean": 0.8994560872114687,
+        "prediction_reference_length_ratio": 0.944195809735039,
+        "length_mae": 2.053069719042664,
+        "length_rmse": 2.9280302392916018,
+        "edit_substitutions": 2066,
+        "edit_insertions": 2256,
+        "edit_deletions": 847,
+        "total_reference_codepoints": 25249,
+        "total_edit_distance": 5169,
+        "exact_count": 93
+      },
+      "hybrid": {
+        "samples": 961,
+        "exact_match": 0.1425598335067638,
+        "line_error_rate": 0.8574401664932362,
+        "micro_cer": 0.17287813378747674,
+        "micro_character_accuracy": 0.8271218662125233,
+        "macro_cer_mean": 0.16599634344334377,
+        "macro_cer_median": 0.15384615384615385,
+        "micro_tibetan_unit_error_rate": 0.3006120340195533,
+        "macro_tibetan_unit_error_rate_mean": 0.2999652390867136,
+        "normalized_edit_similarity_mean": 0.8373213409678898,
+        "char_overlap_precision_mean": 0.9369100756549642,
+        "char_overlap_recall_mean": 0.8989515567974858,
+        "char_overlap_f1_mean": 0.9157661398431169,
+        "prediction_reference_length_ratio": 0.9567111568775001,
+        "length_mae": 1.7513007284079085,
+        "length_rmse": 2.5760038908716036,
+        "edit_substitutions": 1716,
+        "edit_insertions": 1871,
+        "edit_deletions": 778,
+        "total_reference_codepoints": 25249,
+        "total_edit_distance": 4365,
+        "exact_count": 137
+      }
+    },
+    "selector_effect": {
+      "test_samples": 961,
+      "selected_auxiliary": 136,
+      "selected_better": 84,
+      "selected_worse": 30,
+      "selected_tie": 22,
+      "candidate_disagreements": 688,
+      "auxiliary_better_total": 163,
+      "net_saved_edits": 136,
+      "absolute_cer_reduction": 0.0053863519347300826,
+      "relative_cer_reduction": 0.03021550766496331,
+      "bootstrap_iterations": 5000,
+      "bootstrap_seed": 42,
+      "bootstrap_unit": "NFC-source-linked parent-line connected group",
+      "bootstrap_groups": 874,
+      "absolute_cer_reduction_ci95": [
+        0.0031290696167943343,
+        0.007663372072092211
+      ],
+      "exact_match_gain_ci95": [
+        0.0,
+        0.014783526927138331
+      ],
+      "bootstrap_scope": "conditional on one split/model seed; excludes training variability and external generalization"
+    }
+  },
+  "selector": {
+    "best_C": 0.3,
+    "best_threshold": 0.4,
+    "calibration_samples": 962,
+    "calibration_group_count": 850,
+    "tuning": [
+      {
+        "C": 0.01,
+        "threshold": 0.35,
+        "calibration_oof_cer": 0.18579944041198654,
+        "calibration_oof_exact": 0.15904365904365905
+      },
+      {
+        "C": 0.01,
+        "threshold": 0.4,
+        "calibration_oof_cer": 0.18571834069989052,
+        "calibration_oof_exact": 0.158004158004158
+      },
+      {
+        "C": 0.01,
+        "threshold": 0.45,
+        "calibration_oof_cer": 0.1864076882527067,
+        "calibration_oof_exact": 0.15592515592515593
+      },
+      {
+        "C": 0.01,
+        "threshold": 0.5,
+        "calibration_oof_cer": 0.18721868537366693,
+        "calibration_oof_exact": 0.15384615384615385
+      },
+      {
+        "C": 0.01,
+        "threshold": 0.55,
+        "calibration_oof_cer": 0.18734033494181096,
+        "calibration_oof_exact": 0.15384615384615385
+      },
+      {
+        "C": 0.01,
+        "threshold": 0.6,
+        "calibration_oof_cer": 0.187502534366003,
+        "calibration_oof_exact": 0.15280665280665282
+      },
+      {
+        "C": 0.01,
+        "threshold": 0.65,
+        "calibration_oof_cer": 0.18774583350229107,
+        "calibration_oof_exact": 0.15072765072765074
+      },
+      {
+        "C": 0.01,
+        "threshold": 0.7,
+        "calibration_oof_cer": 0.18794858278253113,
+        "calibration_oof_exact": 0.15072765072765074
+      },
+      {
+        "C": 0.03,
+        "threshold": 0.35,
+        "calibration_oof_cer": 0.1853128421394104,
+        "calibration_oof_exact": 0.1600831600831601
+      },
+      {
+        "C": 0.03,
+        "threshold": 0.4,
+        "calibration_oof_cer": 0.1856777908438425,
+        "calibration_oof_exact": 0.15904365904365905
+      },
+      {
+        "C": 0.03,
+        "threshold": 0.45,
+        "calibration_oof_cer": 0.18511009285917035,
+        "calibration_oof_exact": 0.15904365904365905
+      },
+      {
+        "C": 0.03,
+        "threshold": 0.5,
+        "calibration_oof_cer": 0.18575889055593853,
+        "calibration_oof_exact": 0.15696465696465697
+      },
+      {
+        "C": 0.03,
+        "threshold": 0.55,
+        "calibration_oof_cer": 0.18644823810875472,
+        "calibration_oof_exact": 0.15696465696465697
+      },
+      {
+        "C": 0.03,
+        "threshold": 0.6,
+        "calibration_oof_cer": 0.18717813551761892,
+        "calibration_oof_exact": 0.1548856548856549
+      },
+      {
+        "C": 0.03,
+        "threshold": 0.65,
+        "calibration_oof_cer": 0.18717813551761892,
+        "calibration_oof_exact": 0.1548856548856549
+      },
+      {
+        "C": 0.03,
+        "threshold": 0.7,
+        "calibration_oof_cer": 0.1871375856615709,
+        "calibration_oof_exact": 0.15280665280665282
+      },
+      {
+        "C": 0.1,
+        "threshold": 0.35,
+        "calibration_oof_cer": 0.1849073435789303,
+        "calibration_oof_exact": 0.1600831600831601
+      },
+      {
+        "C": 0.1,
+        "threshold": 0.4,
+        "calibration_oof_cer": 0.18506954300312234,
+        "calibration_oof_exact": 0.1600831600831601
+      },
+      {
+        "C": 0.1,
+        "threshold": 0.45,
+        "calibration_oof_cer": 0.18539394185150643,
+        "calibration_oof_exact": 0.158004158004158
+      },
+      {
+        "C": 0.1,
+        "threshold": 0.5,
+        "calibration_oof_cer": 0.18539394185150643,
+        "calibration_oof_exact": 0.158004158004158
+      },
+      {
+        "C": 0.1,
+        "threshold": 0.55,
+        "calibration_oof_cer": 0.18588054012408256,
+        "calibration_oof_exact": 0.15696465696465697
+      },
+      {
+        "C": 0.1,
+        "threshold": 0.6,
+        "calibration_oof_cer": 0.18644823810875472,
+        "calibration_oof_exact": 0.15696465696465697
+      },
+      {
+        "C": 0.1,
+        "threshold": 0.65,
+        "calibration_oof_cer": 0.18685373666923483,
+        "calibration_oof_exact": 0.15592515592515593
+      },
+      {
+        "C": 0.1,
+        "threshold": 0.7,
+        "calibration_oof_cer": 0.18742143465390698,
+        "calibration_oof_exact": 0.15384615384615385
+      },
+      {
+        "C": 0.3,
+        "threshold": 0.35,
+        "calibration_oof_cer": 0.18478569401078626,
+        "calibration_oof_exact": 0.16112266112266113
+      },
+      {
+        "C": 0.3,
+        "threshold": 0.4,
+        "calibration_oof_cer": 0.18442074530635416,
+        "calibration_oof_exact": 0.1600831600831601
+      },
+      {
+        "C": 0.3,
+        "threshold": 0.45,
+        "calibration_oof_cer": 0.18519119257126637,
+        "calibration_oof_exact": 0.15904365904365905
+      },
+      {
+        "C": 0.3,
+        "threshold": 0.5,
+        "calibration_oof_cer": 0.18608328940432262,
+        "calibration_oof_exact": 0.158004158004158
+      },
+      {
+        "C": 0.3,
+        "threshold": 0.55,
+        "calibration_oof_cer": 0.18579944041198654,
+        "calibration_oof_exact": 0.158004158004158
+      },
+      {
+        "C": 0.3,
+        "threshold": 0.6,
+        "calibration_oof_cer": 0.18616438911641864,
+        "calibration_oof_exact": 0.15592515592515593
+      },
+      {
+        "C": 0.3,
+        "threshold": 0.65,
+        "calibration_oof_cer": 0.1863671383966587,
+        "calibration_oof_exact": 0.15592515592515593
+      },
+      {
+        "C": 0.3,
+        "threshold": 0.7,
+        "calibration_oof_cer": 0.18701593609342687,
+        "calibration_oof_exact": 0.1548856548856549
+      },
+      {
+        "C": 1.0,
+        "threshold": 0.35,
+        "calibration_oof_cer": 0.18482624386683427,
+        "calibration_oof_exact": 0.1600831600831601
+      },
+      {
+        "C": 1.0,
+        "threshold": 0.4,
+        "calibration_oof_cer": 0.18466404444264223,
+        "calibration_oof_exact": 0.1600831600831601
+      },
+      {
+        "C": 1.0,
+        "threshold": 0.45,
+        "calibration_oof_cer": 0.18511009285917035,
+        "calibration_oof_exact": 0.15904365904365905
+      },
+      {
+        "C": 1.0,
+        "threshold": 0.5,
+        "calibration_oof_cer": 0.18579944041198654,
+        "calibration_oof_exact": 0.15904365904365905
+      },
+      {
+        "C": 1.0,
+        "threshold": 0.55,
+        "calibration_oof_cer": 0.1860021896922266,
+        "calibration_oof_exact": 0.158004158004158
+      },
+      {
+        "C": 1.0,
+        "threshold": 0.6,
+        "calibration_oof_cer": 0.18616438911641864,
+        "calibration_oof_exact": 0.15696465696465697
+      },
+      {
+        "C": 1.0,
+        "threshold": 0.65,
+        "calibration_oof_cer": 0.18648878796480273,
+        "calibration_oof_exact": 0.1548856548856549
+      },
+      {
+        "C": 1.0,
+        "threshold": 0.7,
+        "calibration_oof_cer": 0.18652933782085074,
+        "calibration_oof_exact": 0.1548856548856549
+      },
+      {
+        "C": 3.0,
+        "threshold": 0.35,
+        "calibration_oof_cer": 0.18474514415473825,
+        "calibration_oof_exact": 0.1600831600831601
+      },
+      {
+        "C": 3.0,
+        "threshold": 0.4,
+        "calibration_oof_cer": 0.18470459429869024,
+        "calibration_oof_exact": 0.1600831600831601
+      },
+      {
+        "C": 3.0,
+        "threshold": 0.45,
+        "calibration_oof_cer": 0.18486679372288228,
+        "calibration_oof_exact": 0.15904365904365905
+      },
+      {
+        "C": 3.0,
+        "threshold": 0.5,
+        "calibration_oof_cer": 0.1856372409877945,
+        "calibration_oof_exact": 0.15904365904365905
+      },
+      {
+        "C": 3.0,
+        "threshold": 0.55,
+        "calibration_oof_cer": 0.1860021896922266,
+        "calibration_oof_exact": 0.158004158004158
+      },
+      {
+        "C": 3.0,
+        "threshold": 0.6,
+        "calibration_oof_cer": 0.18608328940432262,
+        "calibration_oof_exact": 0.15696465696465697
+      },
+      {
+        "C": 3.0,
+        "threshold": 0.65,
+        "calibration_oof_cer": 0.18648878796480273,
+        "calibration_oof_exact": 0.1548856548856549
+      },
+      {
+        "C": 3.0,
+        "threshold": 0.7,
+        "calibration_oof_cer": 0.18652933782085074,
+        "calibration_oof_exact": 0.1548856548856549
+      },
+      {
+        "C": 10.0,
+        "threshold": 0.35,
+        "calibration_oof_cer": 0.18462349458659422,
+        "calibration_oof_exact": 0.1600831600831601
+      },
+      {
+        "C": 10.0,
+        "threshold": 0.4,
+        "calibration_oof_cer": 0.1845829447305462,
+        "calibration_oof_exact": 0.1600831600831601
+      },
+      {
+        "C": 10.0,
+        "threshold": 0.45,
+        "calibration_oof_cer": 0.18486679372288228,
+        "calibration_oof_exact": 0.15904365904365905
+      },
+      {
+        "C": 10.0,
+        "threshold": 0.5,
+        "calibration_oof_cer": 0.18551559141965046,
+        "calibration_oof_exact": 0.15904365904365905
+      },
+      {
+        "C": 10.0,
+        "threshold": 0.55,
+        "calibration_oof_cer": 0.18579944041198654,
+        "calibration_oof_exact": 0.15904365904365905
+      },
+      {
+        "C": 10.0,
+        "threshold": 0.6,
+        "calibration_oof_cer": 0.18632658854061068,
+        "calibration_oof_exact": 0.15696465696465697
+      },
+      {
+        "C": 10.0,
+        "threshold": 0.65,
+        "calibration_oof_cer": 0.18648878796480273,
+        "calibration_oof_exact": 0.1548856548856549
+      },
+      {
+        "C": 10.0,
+        "threshold": 0.7,
+        "calibration_oof_cer": 0.18652933782085074,
+        "calibration_oof_exact": 0.1548856548856549
+      }
+    ],
+    "all_selected_before_test": true
+  },
+  "external": {
+    "name": "TibNorm (unmodified default full pipeline)",
+    "upstream_url": "https://github.com/Divergent-Discourses/TibNorm",
+    "upstream_commit": "d296f6566da1308f7c14180080acc43ace8dd68a",
+    "resource_condition": "Published external abbreviation tables, not restricted to this corpus training split",
+    "test_metrics": {
+      "samples": 961,
+      "exact_match": 0.03433922996878252,
+      "line_error_rate": 0.9656607700312175,
+      "micro_cer": 0.28076359459780587,
+      "micro_character_accuracy": 0.7192364054021941,
+      "macro_cer_mean": 0.2786102934356167,
+      "macro_cer_median": 0.2727272727272727,
+      "micro_tibetan_unit_error_rate": 0.5282568953183372,
+      "macro_tibetan_unit_error_rate_mean": 0.5256094307879137,
+      "normalized_edit_similarity_mean": 0.7230091119783069,
+      "char_overlap_precision_mean": 0.9158891324541607,
+      "char_overlap_recall_mean": 0.7883564294864479,
+      "char_overlap_f1_mean": 0.844208546569826,
+      "prediction_reference_length_ratio": 0.853736781654719,
+      "length_mae": 3.976066597294485,
+      "length_rmse": 5.084407209315091,
+      "edit_substitutions": 2780,
+      "edit_insertions": 4001,
+      "edit_deletions": 308
+    },
+    "test_only_evaluation_no_tuning": true
+  },
+  "evidence": [
+    {
+      "logical_path": "corpus/split_manifest.json",
+      "sha256": "ea8009f99b54b367623ac2ffcc4321d4933cd402d3f55576f67c503388ad41f0"
+    },
+    {
+      "logical_path": "evaluation/test_metrics.json",
+      "sha256": "f92a40bc1ec6f9e6a1528458997b0b76333c522b04444023d43fb3b17dd6450f"
+    },
+    {
+      "logical_path": "selector/selection_summary.json",
+      "sha256": "7130207db2276a2ebd4ba8703f63ece00cf2c7b413a7e3e0d87f495ff869bb51"
+    },
+    {
+      "logical_path": "tibnorm_external/metrics.json",
+      "sha256": "dfa4ef92c924640297d32a8016602588854b3d9123dd58f94d51aab7beebc2e9"
+    }
+  ],
+  "qualitative_fig6": {
+    "rows": [
+      "双音节压缩",
+      "同字合并",
+      "字母替代"
+    ],
+    "columns": [
+      "变长展开",
+      "音节边界",
+      "同形字母",
+      "替代符号"
+    ],
+    "matrix": [
+      [
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        1
+      ]
+    ],
+    "evidence_type": "qualitative_relation_not_annotation_frequency",
+    "note": "Three illustrative mechanisms; not mutually exclusive annotation classes or measured frequencies.",
+    "source_reference": "安世兴. 藏文缩写字. 民族语文, 1984(2):25-31."
+  }
+}

@@ -1,0 +1,4 @@
+﻿method_id,label,n,micro_cer,micro_tibetan_unit_error_rate,exact_match,total_reference_characters,total_character_distance,resource_condition
+context_raw,上下文转写（原始输出）,961,0.18634401362430195,0.3827994595024243,0.12903225806451613,25249,4705,same_trained_contextual_model
+context_plus_shad,＋句末符号修正,961,0.18448255376450554,0.3809713059375248,0.1331945889698231,25249,4658,same_trained_contextual_model
+contextual,＋训练词表重切分,961,0.17826448572220682,0.3149193227883316,0.13527575442247658,25249,4501,same_trained_contextual_model

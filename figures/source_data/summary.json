@@ -1,0 +1,126 @@
+{
+  "protocol": "grouped",
+  "protocol_label": "联结分组划分（种子 42）",
+  "n_train": 6730,
+  "n_valid": 962,
+  "n_calibration": 962,
+  "n_test": 961,
+  "selector_selected_edit": 136,
+  "selector_C": 0.3,
+  "selector_threshold": 0.4,
+  "edit_threshold": 0.8,
+  "edit_distance": 1,
+  "context_min_count": 3,
+  "context_min_confidence": 0.5,
+  "context_edit_distance": 1,
+  "absolute_cer_reduction_vs_contextual": 0.0053863519347300826,
+  "selector_effect": {
+    "test_samples": 961,
+    "selected_auxiliary": 136,
+    "selected_better": 84,
+    "selected_worse": 30,
+    "selected_tie": 22,
+    "candidate_disagreements": 688,
+    "auxiliary_better_total": 163,
+    "net_saved_edits": 136,
+    "absolute_cer_reduction": 0.0053863519347300826,
+    "relative_cer_reduction": 0.03021550766496331,
+    "bootstrap_iterations": 5000,
+    "bootstrap_seed": 42,
+    "bootstrap_unit": "NFC-source-linked parent-line connected group",
+    "bootstrap_groups": 874,
+    "absolute_cer_reduction_ci95": [
+      0.0031290696167943343,
+      0.007663372072092211
+    ],
+    "exact_match_gain_ci95": [
+      0.0,
+      0.014783526927138331
+    ],
+    "bootstrap_scope": "conditional on one split/model seed; excludes training variability and external generalization"
+  },
+  "notes": [
+    "TibNorm uses external published rule tables and broader normalisation; it is a distinct resource condition.",
+    "Character Transformer is not pretrained and decoded greedily; its weak result does not establish superiority to strong pretrained sequence models.",
+    "All primary points are one predefined seed42 training state; no seed variation is hidden inside a sample confidence interval.",
+    "Tibetan unit error includes separator tokens defined by evaluate_restore.tibetan_units; it is not WER.",
+    "Development controls candidates; independent calibration controls the selector; final test is frozen."
+  ],
+  "sources": [
+    {
+      "path": "submission/experiments/runs_corrected/contextual/training_summary.json",
+      "sha256": "999caacf447e0fdc8860cb9670b80126286b20b673161fe8f5c53bf8fe536e94"
+    },
+    {
+      "path": "submission/experiments/runs_corrected/corpus/split_manifest.json",
+      "sha256": "ea8009f99b54b367623ac2ffcc4321d4933cd402d3f55576f67c503388ad41f0"
+    },
+    {
+      "path": "submission/experiments/runs_corrected/diagnostics/candidate_diagnostics.json",
+      "sha256": "021ab5c69f2a1be28032017cf817f04d95342e71d048eec8b6115bb7ac64c989"
+    },
+    {
+      "path": "submission/experiments/runs_corrected/edit_tagger/metrics.json",
+      "sha256": "4a46f24da05947ac83da5e1a9b510c0df100f10b7e08b52f8963af47c7c400dd"
+    },
+    {
+      "path": "submission/experiments/runs_corrected/evaluation/contextual_test_predictions.jsonl",
+      "sha256": "72e61eb4a818d5dbcf800931bf8152de9c5035818a7ebad7f492fe22471a96d9"
+    },
+    {
+      "path": "submission/experiments/runs_corrected/evaluation/edit_tagger_test_predictions.jsonl",
+      "sha256": "3480a71070a72faa11b8c919b5bdbe92362e7af48855b6f9c8183561bfb006f3"
+    },
+    {
+      "path": "submission/experiments/runs_corrected/evaluation/hybrid_test_predictions.jsonl",
+      "sha256": "c8034eaf68c21db179b2fefefcf48fc101b2a998cbf483af6bc789996025c1ed"
+    },
+    {
+      "path": "submission/experiments/runs_corrected/evaluation/test_metrics.json",
+      "sha256": "f92a40bc1ec6f9e6a1528458997b0b76333c522b04444023d43fb3b17dd6450f"
+    },
+    {
+      "path": "submission/experiments/runs_corrected/no_neural_ablation/evaluation/test_metrics.json",
+      "sha256": "0eac4e72d31df15aace29c47554947b81ba5e568833d77ea1f6d64ed4a51f23b"
+    },
+    {
+      "path": "submission/experiments/runs_corrected/selector/selection_summary.json",
+      "sha256": "7130207db2276a2ebd4ba8703f63ece00cf2c7b413a7e3e0d87f495ff869bb51"
+    },
+    {
+      "path": "submission/experiments/runs_corrected/seq2seq/metrics.json",
+      "sha256": "b8cc1b0480e45afa432a3820111f3bc7d56331750ce34bda3faccef2d7a13a20"
+    },
+    {
+      "path": "submission/experiments/runs_corrected/seq2seq/test_predictions.jsonl",
+      "sha256": "ae4055c073e2ba3012a0970595dbe6a38def023f350f57b2470824de04a1ae57"
+    },
+    {
+      "path": "submission/experiments/runs_corrected/tibnorm_external/metrics.json",
+      "sha256": "dfa4ef92c924640297d32a8016602588854b3d9123dd58f94d51aab7beebc2e9"
+    },
+    {
+      "path": "submission/experiments/runs_corrected_seed43/evaluation/test_metrics.json",
+      "sha256": "20f302999beb01503bdf6a7eb083938f473ae8159e6e37caf1e16d38aa751969"
+    },
+    {
+      "path": "submission/experiments/runs_corrected_seed44/evaluation/test_metrics.json",
+      "sha256": "0eeb9a6d1fab36efd441250c42aa9c89e586fdab89f3fecb39723d7d35289f0e"
+    }
+  ],
+  "neural_diagnostics": {
+    "scope": "post-hoc fixed-checkpoint diagnostic controls; not used to select or refit main system",
+    "fallback_fraction": 0.5891862585637537,
+    "source_codepoints": 20289,
+    "checkpoint_epoch": 23
+  },
+  "no_neural_selector": {
+    "scope": "post-hoc full-system diagnostic ablation; not a pre-specified primary model and never replaces seed42 by test performance",
+    "C": 1.0,
+    "threshold": 0.35,
+    "micro_cer": 0.17295734484534042,
+    "main_micro_cer": 0.17287813378747674,
+    "difference_cer_pp": 0.007921105786368177,
+    "edit_distance_difference": 2
+  }
+}

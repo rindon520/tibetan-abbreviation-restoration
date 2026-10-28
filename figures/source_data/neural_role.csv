@@ -1,0 +1,6 @@
+﻿method_id,label,micro_cer,role,posthoc
+pure_neural,纯神经标签＋后处理,0.25446552338706485,edit_branch,True
+pure_rules,纯编辑对齐规则＋后处理,0.19838409441958096,edit_branch,True
+neural_fallback,预定义神经＋规则回退,0.2047209790486752,edit_branch,False
+no_neural_selector,后验无神经双路选择,0.17295734484534042,selector,True
+main_neural_selector,预定义双路选择,0.17287813378747674,selector,False

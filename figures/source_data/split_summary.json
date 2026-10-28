@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "seed": 42,
+  "protocol": "parent_line_and_NFC_source_connected_groups_70_10_10_10",
+  "group_normalization": "NFC, grouping keys only; source and reference preserved",
+  "source_file_sha256": "1bff6b35dec9ccebdfad0c1fe6a0e1f543b359746bf890178c517144be9b6a13",
+  "restore_file_sha256": "4a168f52013f596fc35df3c416c560457377d1a27f1ee4d400324e9798a91d90",
+  "records_sha256": "534f9ac310e0a1ea6c878c0724151c3c988442557cad0c6fff280a4962ac9bbe",
+  "raw_line_pairs": 10820,
+  "rejected_line_pairs": 2218,
+  "trusted_segments": 9615,
+  "connected_groups": 8593,
+  "splits": {
+    "test": {
+      "samples": 961,
+      "groups": 874,
+      "parent_lines": 874
+    },
+    "calibration": {
+      "samples": 962,
+      "groups": 850,
+      "parent_lines": 850
+    },
+    "dev": {
+      "samples": 962,
+      "groups": 864,
+      "parent_lines": 864
+    },
+    "train": {
+      "samples": 6730,
+      "groups": 6005,
+      "parent_lines": 6014
+    }
+  },
+  "cross_split_parent_overlap": 0,
+  "cross_split_normalized_source_overlap": 0,
+  "selection_contract": {
+    "train": "all generative mappings, vocabularies, ngrams and neural weights",
+    "dev": "context evidence/correction thresholds and neural early stopping/fallback thresholds",
+    "calibration": "selector training and grouped out-of-fold C/threshold selection only",
+    "test": "final evaluation after every parameter is frozen; no iterative tuning"
+  },
+  "limitations": [
+    "Parent-line groups do not establish manuscript/collection independence because provenance is absent.",
+    "A newly repartitioned corpus previously used in development is not a pristine external test dataset.",
+    "Trusted segment pairing filters with reference SHAD count; this does not evaluate source-only segmentation or OCR."
+  ]
+}

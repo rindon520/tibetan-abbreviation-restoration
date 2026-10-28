@@ -1,0 +1,13 @@
+﻿mechanism,aspect,association,evidence_type
+双音节压缩,变长展开,1,qualitative_relation_not_annotation_frequency
+双音节压缩,音节边界,1,qualitative_relation_not_annotation_frequency
+双音节压缩,同形字母,0,qualitative_relation_not_annotation_frequency
+双音节压缩,替代符号,0,qualitative_relation_not_annotation_frequency
+同字合并,变长展开,1,qualitative_relation_not_annotation_frequency
+同字合并,音节边界,1,qualitative_relation_not_annotation_frequency
+同字合并,同形字母,1,qualitative_relation_not_annotation_frequency
+同字合并,替代符号,0,qualitative_relation_not_annotation_frequency
+字母替代,变长展开,1,qualitative_relation_not_annotation_frequency
+字母替代,音节边界,0,qualitative_relation_not_annotation_frequency
+字母替代,同形字母,0,qualitative_relation_not_annotation_frequency
+字母替代,替代符号,1,qualitative_relation_not_annotation_frequency

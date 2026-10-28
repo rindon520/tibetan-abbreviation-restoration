@@ -1,0 +1,3 @@
+-r requirements-core.txt
+# Required only to load the externally acquired TibNorm TSV tables.
+pandas==2.3.3

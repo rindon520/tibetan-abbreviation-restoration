@@ -1,0 +1,4 @@
+﻿operation,contextual,reranked,delta,direction
+替换 S,1801,1716,-85,prediction_to_reference
+插入 I,1868,1871,3,prediction_to_reference
+删除 D,832,778,-54,prediction_to_reference

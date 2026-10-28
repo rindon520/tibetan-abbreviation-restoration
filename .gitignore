@@ -1,0 +1,54 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.validation-venv/
+venv/
+.env
+.env.*
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Corpora, learned models, predictions and machine-specific outputs
+/data/
+/data_segments_trusted/
+/runs/
+/output/
+/checkpoints/
+/final_model/
+/experiments/
+/figures/generated/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.whl
+*.log
+model.json
+selector.json
+*_predictions.jsonl
+*_samples.json
+Source.txt
+Restore.txt
+!examples/toy/Source.txt
+!examples/toy/Restore.txt
+
+# Manuscripts and third-party binary/corpus redistribution are separate
+/papers/
+/submission/
+/archive/
+/segment-ti/
+/third_party/
+*.docx
+*.pdf
+*.exe
+*.dll
+*.so
+*.o
+*.zip
+
+# Local git setup and release reports
+release_audit.local.json

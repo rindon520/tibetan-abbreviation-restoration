@@ -1,0 +1,4 @@
+-r requirements-core.txt
+# Install a PyTorch build suitable for your device separately if required.
+# Neural code uses torch.amp.GradScaler and torch.amp.autocast.
+torch>=2.4,<3
