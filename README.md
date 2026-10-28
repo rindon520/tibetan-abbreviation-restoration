@@ -4,7 +4,7 @@
 
 据作者说明，当前配对数据整理自谢拉编著的《藏文缩略语词典》（民族出版社），并参考项布旺杰的《缩略语词典》（四川民族出版社）。两书的出版年份、版次、具体词条来源对应和整理复核流程尚待补齐；书名、作者和出版社按作者提供记录。当前实证范围为词典来源的配对文本，不构成 OCR 或独立古籍正文基准。
 
-本目录是独立的 GitHub 仓库，包含研究代码，以及 `data/` 中的藏文缩写—还原对照语料和藏文字符集。数据文件用途、记录数与读取方式见 [data/README.md](data/README.md)。论文、训练日志、模型权重和第三方分词器不包含在本仓库。现有代码和新增复现入口的来源见 [docs/source_manifest.json](docs/source_manifest.json)。
+本目录是独立的 GitHub 仓库，包含研究代码、`data/` 中的藏文缩写—还原对照语料和藏文字符集，以及 `segment-ti/` 中作者提供的藏文分词器包。数据说明见 [data/README.md](data/README.md)，分词器文件与运行条件见 [segment-ti/README.md](segment-ti/README.md)。论文、训练日志和还原模型权重不包含在本仓库。现有代码和新增复现入口的来源见 [docs/source_manifest.json](docs/source_manifest.json)。
 
 ## 安装与最小验证
 
@@ -117,6 +117,7 @@ python figures/v21/build_v21_figures.py --output-dir figures/generated/v21
 | `prepare_segment_data.py` | 历史句段抽取工具；不保存原始行分组 |
 | `abbrev_restore.py`, `train_abbrev_restore.py`, `ablate_abbrev_restore.py` | 独立的两阶段检测与还原实验、消融 |
 | `segment_tibetan.py` | 可选外部分词器接口与音节边界回退 |
+| `segment-ti/` | 作者提供的藏文分词器源码、Linux 程序与字符规则资源；缺失模型资源见目录说明 |
 | `summarize_sci_metrics.py` | 历史指标汇总与成对 Bootstrap 工具 |
 | `scripts/evaluate_tibnorm_external.py` | 固定版本 TibNorm 外部归一化比较，不复制上游资源 |
 | `scripts/diagnose_frozen_candidates.py`, `scripts/ablate_neural_candidate.py` | 后验候选诊断与去神经控制，保留探索性身份 |
@@ -130,7 +131,7 @@ python figures/v21/build_v21_figures.py --output-dir figures/generated/v21
 
 同时报告字符编辑准确率 CA（`micro_character_accuracy = 1 - micro_cer`）、整段还原准确率 EM（`exact_match`）、字符错误率 micro CER（总编辑距离 / 总参考字符数）、片段错误率（`line_error_rate = 1 - exact_match`）和音节单位错误率。CA 是编辑距离的互补指标，可为负值，不能解释为字符分类准确率；EM 是整段逐码点相等的比例，分母为测试片段数。评估入口终端摘要和完整 JSON 均保留这两种准确率与错误率；终端各率以比例值显示，表格将相应值乘100展示为百分数；百分数满足CA/%=100−CER/%。主方法 CA 为82.71%、EM 为14.26%，两者定义不同。字符多重集重叠分数仅作辅助描述。Unicode 字符计数、标点处理及统计限制见 [docs/reproducibility.md](docs/reproducibility.md)。
 
-原始配对语料与藏文字符集已收录于 [data/](data/README.md)；收录不自动授予公开再分发或开源使用许可。第三方 `segment-ti` 程序与模型仍未打包。默认可使用本仓库音节边界回退；它与外部分词的结果不等价。接口和许可状态见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) 与 [LICENSE_STATUS.md](LICENSE_STATUS.md)。仓库没有替作者选择开源许可证；在权利人选择许可证之前，公开上传不等于授予开源使用权。
+原始配对语料与藏文字符集已收录于 [data/](data/README.md)；收录不自动授予公开再分发或开源使用许可。第三方 `segment-ti` 压缩包内的源码、Linux 可执行程序与字符规则资源已收录于 [segment-ti/](segment-ti/README.md)，但提供的包缺少源码引用的模型和词典文件，不能视为完整可运行的模型包。默认仍可使用本仓库音节边界回退；它与外部分词的结果不等价。接口和许可状态见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) 与 [LICENSE_STATUS.md](LICENSE_STATUS.md)。仓库没有替作者选择开源许可证；在权利人选择许可证之前，公开上传不等于授予开源使用权。
 
 固定版本 TibNorm 的外部比较使用 6,263 个有效缩略词条目及完整正常化规则，资源条件不同于仅在本文训练集学习的方法。结果和限制见 [docs/external_baseline.md](docs/external_baseline.md)；本文不声称首次混合方法或首次藏文缩略词还原。
 

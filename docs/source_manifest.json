@@ -7,7 +7,7 @@
     "train_hybrid_selector.py": "Validate candidate alignment and class support; export portable full selector JSON.",
     "train_edit_tagger.py": "Remove implicit duplicate OpenMP runtime override; use a clean dependency environment.",
     "train_restore.py": "Build vocabulary after splitting and only from training examples.",
-    "segment_tibetan.py": "Resolve external segmenter working directory for portable relative-path execution.",
+    "segment_tibetan.py": "Resolve external segmenter working directory for portable relative-path execution; reject output line-count mismatches so incomplete resources cannot silently drop records.",
     "legacy/mt5/predict.py": "Align model directory and task prefix with the paired historical training script.",
     "scripts/run_grouped_experiment.py": "Copy corrected protocol; portable default root, stage-specific imports, strict frozen-split checks, stage environment snapshots.",
     "scripts/train_grouped_seq2seq.py": "Portable default root, frozen corpus hash check, standard checkpoint configuration alias.",
@@ -101,7 +101,7 @@
       "path": "segment_tibetan.py",
       "original_path": "segment_tibetan.py",
       "original_sha256": "37120fec0619d26015e5a29e16e46bfea6032b7226ba0843073b9bdf1e03eab3",
-      "packaged_sha256": "e0f7d13b6d9d2ebc46778934ca73188cf81885a4093f58c9a1cd74b3eeb60fe9",
+      "packaged_sha256": "7fa7bfccdc3e511a014758a9b10bf999bd1020ad6a5591c3b18c7c2f871c4b5d",
       "changed_from_original": true
     },
     {

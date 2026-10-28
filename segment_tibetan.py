@@ -77,6 +77,12 @@ def _run_external_segmenter(
             raise RuntimeError("tiSegmenter did not create the requested .seg output file.")
 
         segmented = output_path.read_text(encoding="utf-8").splitlines()
+        if len(segmented) != len(lines):
+            raise RuntimeError(
+                "tiSegmenter output line count mismatch: "
+                f"expected {len(lines)}, got {len(segmented)}. "
+                "Check its model and resource files."
+            )
         status = {
             "mode": "external",
             "segmenter": "tiSegmenter",

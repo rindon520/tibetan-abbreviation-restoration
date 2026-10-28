@@ -1,0 +1,7 @@
+install:
+make
+
+usage:
+./test -s src-file -t tgt-file
+
+

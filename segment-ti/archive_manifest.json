@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "source_archive": "segment-ti.zip",
+  "archive_sha256": "050d87bc9981507d19496910f35d00cebd02ada941b089cd2b0390552d776be7",
+  "original_file_count": 42,
+  "original_total_bytes": 37533358,
+  "preservation": "Original file contents are unchanged; README.md and archive_manifest.json are repository documentation.",
+  "git_executable_files": [
+    "tiSegmenter"
+  ],
+  "missing_referenced_resources": [
+    "data/model",
+    "data/data.txt",
+    "data_bpe.txt"
+  ],
+  "files": [
+    {
+      "path": "ChType.cpp",
+      "bytes": 1401,
+      "sha256": "a4b5a299bb2e1909acb370d28c62a9fd473d65389dad9e9993865465bf3f2bb3"
+    },
+    {
+      "path": "ChType.h",
+      "bytes": 500,
+      "sha256": "ada1aef18d74c45c1f226b77b2ae4818c15f63717e86374856a8fc5b884871e3"
+    },
+    {
+      "path": "ChType.o",
+      "bytes": 17456,
+      "sha256": "aae20fdb055aeef9dd01b6fce09777fac9734872cee2bb78763f31c93fc98c75"
+    },
+    {
+      "path": "DataStruct.h",
+      "bytes": 856,
+      "sha256": "118e35bb1676a5522d5263e133ddf82d20f88344df7382cf77b545e74e21cee8"
+    },
+    {
+      "path": "PerSeg.cpp",
+      "bytes": 4836,
+      "sha256": "c8e406adc668f144f3a4073869dbd51424250295d47cb13957a7e3f8afe7a93f"
+    },
+    {
+      "path": "PerSeg.o",
+      "bytes": 34472,
+      "sha256": "bab55791e13101cb29c453dd70c4ef144c9a8de1dd1639b0059b9409ae296513"
+    },
+    {
+      "path": "Perceptron.cpp",
+      "bytes": 893,
+      "sha256": "e843e2d6dad05e2cef428a9b251759d47bd0f1d798f0935f54e116686cb1f367"
+    },
+    {
+      "path": "Perceptron.h",
+      "bytes": 311,
+      "sha256": "73d3a76701446c2fdc0dc8f05a69ba59ea959bfc3b9ced42db0832c46521d82d"
+    },
+    {
+      "path": "Perceptron.o",
+      "bytes": 14448,
+      "sha256": "d9c1070b1d614f4d2f9aeb5324f7f09c5e7a7372781e483d380327262b09c94f"
+    },
+    {
+      "path": "Segmentor.cpp",
+      "bytes": 15648,
+      "sha256": "9536386518d30e24f7e787673cf6cc6085127d28c077df12cea628c4252daf36"
+    },
+    {
+      "path": "Segmentor.h",
+      "bytes": 1091,
+      "sha256": "fa7303cb97703cdb87a53fff55e9ff07dc7c719cb555437affa2b2118739292b"
+    },
+    {
+      "path": "Segmentor.o",
+      "bytes": 95128,
+      "sha256": "29af953ee8e323348def0c496fa09dbe36b9297762f1899df736631db245760d"
+    },
+    {
+      "path": "Utf8Stream.cpp",
+      "bytes": 1809,
+      "sha256": "792dddcaef3570ad59c22382c78e5651df6535481a645c4765ebb80d424a7e44"
+    },
+    {
+      "path": "Utf8Stream.h",
+      "bytes": 435,
+      "sha256": "56309177f98cd59717fbdb4c6f8a19562e1932621d23d8d32d893d3eeaae95f3"
+    },
+    {
+      "path": "Utf8Stream.o",
+      "bytes": 7712,
+      "sha256": "3a3a7f99226168878ac040b19cf9779d1173670d5301475021ddec5fde078a3e"
+    },
+    {
+      "path": "a.txt",
+      "bytes": 111,
+      "sha256": "632942ab007643faf61bacd8ef210411926640a0939f10a2645f217f15f6f438"
+    },
+    {
+      "path": "cpp2py.sh",
+      "bytes": 166,
+      "sha256": "0f57fa4736a8388a4edb67bdb7e81e162fbb45bc3393aefbfd7977c59af1db5a"
+    },
+    {
+      "path": "cpp2python.py",
+      "bytes": 574,
+      "sha256": "6dae30956ff1dee4e7d79c24c2282b22cab6301054505c993956c38d19c39b94"
+    },
+    {
+      "path": "duanju.txt",
+      "bytes": 14419238,
+      "sha256": "fa4cb4972a26761de3df3406a6df68b86e7a752b6deb886aa930c69d03966027"
+    },
+    {
+      "path": "exposed_decl.pypp.txt",
+      "bytes": 16462706,
+      "sha256": "0e81d9c91db8f8be8ae05289ebaa224cb8a19172274ddf141bafce813ef557de"
+    },
+    {
+      "path": "makefile",
+      "bytes": 502,
+      "sha256": "c15841f7859f5d6380ca1e347af3cab7ac48a4eff4226507d8ee40578e9e968f"
+    },
+    {
+      "path": "named_tuple.py",
+      "bytes": 1563,
+      "sha256": "dcc677980237ee9371352a56bec8acf77eccb62c254ed3051671d928cb801142"
+    },
+    {
+      "path": "out.txt",
+      "bytes": 116,
+      "sha256": "4059fcff97ee43e4d641c7e7ac7e8fc4f109068f81df957099526b11b6ce4514"
+    },
+    {
+      "path": "readme",
+      "bytes": 55,
+      "sha256": "45bf9f58a379eb8ae243c8835bfb121b55d2f6041abfb1cd03edb5f0bfb98f16"
+    },
+    {
+      "path": "splitutf.cpp",
+      "bytes": 9122,
+      "sha256": "3025233fed2a119b94147d0677a563a386299a2436488a5fb73815cb17038655"
+    },
+    {
+      "path": "splitutf.h",
+      "bytes": 808,
+      "sha256": "2f20937f36ec1c7f8dae4eef534f1879d213491baf526f0724bd7b0f171f1533"
+    },
+    {
+      "path": "splitutf.o",
+      "bytes": 56064,
+      "sha256": "ffff5e36eb94eb0d1a7d2c302a6cb6fcc30249549f908001c95f10027c77acb2"
+    },
+    {
+      "path": "test.py",
+      "bytes": 635,
+      "sha256": "8437b79483bd06d15b3698e907d1606b5b7304836bfff715dd8543476f1d9393"
+    },
+    {
+      "path": "test.txt",
+      "bytes": 111,
+      "sha256": "632942ab007643faf61bacd8ef210411926640a0939f10a2645f217f15f6f438"
+    },
+    {
+      "path": "ti",
+      "bytes": 3075702,
+      "sha256": "a49b246e5bcbf4272a093d73cb9e6eb727294369a69b148798d06dce1f2115fb"
+    },
+    {
+      "path": "tiSegmenter",
+      "bytes": 134016,
+      "sha256": "432536e22cc2889cb6d3a9143056a5a3770d5058a7b8736ccf1eb1a2c64bfb9b"
+    },
+    {
+      "path": "tiseg.cc",
+      "bytes": 7106,
+      "sha256": "00095522eb32347bec295de515400558013c831d384bbc62c9582324dc58733e"
+    },
+    {
+      "path": "tiseg.cc~",
+      "bytes": 1569,
+      "sha256": "63aa12e706b02ef5855be33590fea1ab5f2c5464113d60a3f931099235d6f37a"
+    },
+    {
+      "path": "tiseg.i",
+      "bytes": 65,
+      "sha256": "bea1848af73689388b4e84d13a7a09a7ece07046080727bfdd60b7477c95908f"
+    },
+    {
+      "path": "tiseg.so",
+      "bytes": 3165296,
+      "sha256": "deeb5b829c9806a810f85250430c4c76adbfad6aed3d03dc005e1abe1e8f6621"
+    },
+    {
+      "path": "utf/chsegutf",
+      "bytes": 327,
+      "sha256": "c56e35bcb18761825c18775f3c9e79e6d1b7423ba082e6695b1b063394d8d52f"
+    },
+    {
+      "path": "utf/numfirst",
+      "bytes": 129,
+      "sha256": "e37721adc86172df231ad53b7cf69a418f586e07bc8cbc14def13e48e7a290da"
+    },
+    {
+      "path": "utf/numinerutf",
+      "bytes": 259,
+      "sha256": "8127d8ed22e5eaf327eaa969df085980bfac0a7c39376916d70cc4db12e15227"
+    },
+    {
+      "path": "utf/numutf",
+      "bytes": 39,
+      "sha256": "96cad76d9f07723771cc90e5c58a7902e3b9d6d3ec01c71f50dc528e2f0a025b"
+    },
+    {
+      "path": "utf/semisegsgutf",
+      "bytes": 21,
+      "sha256": "bab3dc8c1c91211abb8cf2b0ab6e09f553a417bf4c7949ba962981aa906fb314"
+    },
+    {
+      "path": "utf/semisegutf",
+      "bytes": 13,
+      "sha256": "aee40832e23edd6d51d7f536180d4f68bd082c9bf0cf6e299cfb773d80076599"
+    },
+    {
+      "path": "utf/tisegutf",
+      "bytes": 49,
+      "sha256": "da6622d2df740e3691cd325e744c31d594b0a03e91ad387e75a6a54330013e27"
+    }
+  ]
+}

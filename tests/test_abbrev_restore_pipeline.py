@@ -44,6 +44,45 @@ class AbbreviationRestorePipelineTests(unittest.TestCase):
         self.assertEqual(status["mode"], "external")
         self.assertEqual(Path(status["cwd"]), segmenter_dir)
 
+    def test_empty_successful_segmenter_output_raises_in_strict_mode(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            def fake_run(command, **kwargs):
+                Path(command[4]).write_text("", encoding="utf-8")
+                return subprocess.CompletedProcess(
+                    command, 0, stdout="Segmentor initialize fail", stderr=""
+                )
+
+            with patch("segment_tibetan.subprocess.run", side_effect=fake_run):
+                with self.assertRaisesRegex(RuntimeError, "expected 2, got 0"):
+                    segment_lines(
+                        ["tok1tok2", "tok3tok4"],
+                        segmenter_dir=Path(tmp),
+                        prefer_external=True,
+                        allow_fallback=False,
+                    )
+
+    def test_empty_successful_segmenter_output_uses_allowed_fallback(self):
+        source_lines = ["tok1tok2", "tok3tok4"]
+        with tempfile.TemporaryDirectory() as tmp:
+            def fake_run(command, **kwargs):
+                Path(command[4]).write_text("", encoding="utf-8")
+                return subprocess.CompletedProcess(
+                    command, 0, stdout="Segmentor initialize fail", stderr=""
+                )
+
+            with patch("segment_tibetan.subprocess.run", side_effect=fake_run):
+                lines, status = segment_lines(
+                    source_lines,
+                    segmenter_dir=Path(tmp),
+                    prefer_external=True,
+                    allow_fallback=True,
+                )
+
+        self.assertEqual(lines, source_lines)
+        self.assertEqual(status["mode"], "fallback")
+        self.assertEqual(status["lines"], len(source_lines))
+        self.assertIn("expected 2, got 0", status["reason"])
+
     def test_fallback_segment_line_uses_tibetan_syllable_boundaries(self):
         text = "\u0f56\u0f7c\u0f51\u0f0b\u0f61\u0f72\u0f42\u0f0d"
 

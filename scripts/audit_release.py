@@ -3,7 +3,7 @@
 import argparse
 import hashlib
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from zipfile import ZIP_DEFLATED, ZipFile
 
 
@@ -19,11 +19,38 @@ INCLUDED_DATA_FILES = {
 }
 
 
+def segmenter_upload_files():
+    manifest_path = ROOT / "segment-ti/archive_manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    allowed = {"segment-ti/README.md", "segment-ti/archive_manifest.json"}
+    violations = []
+    for entry in manifest["files"]:
+        relative = PurePosixPath(entry["path"])
+        if relative.is_absolute() or ".." in relative.parts or "\\" in entry["path"]:
+            raise ValueError("Invalid segmenter manifest path.")
+        name = (PurePosixPath("segment-ti") / relative).as_posix()
+        if name in allowed:
+            raise ValueError("Duplicate segmenter manifest path.")
+        allowed.add(name)
+        path = ROOT / name
+        if (not path.is_file() or path.stat().st_size != entry["bytes"]
+                or hashlib.sha256(path.read_bytes()).hexdigest() != entry["sha256"]):
+            violations.append(name)
+    for name in allowed:
+        if not (ROOT / name).is_file():
+            violations.append(name)
+    return allowed, violations
+
+
 def upload_files():
     files = []
-    violations = []
+    segmenter_files, violations = segmenter_upload_files()
     for path in ROOT.rglob("*"):
         relative = path.relative_to(ROOT)
+        if relative.parts[0] == "segment-ti":
+            if path.is_file() and relative.as_posix() in segmenter_files:
+                files.append(path)
+            continue
         if any(part in EXCLUDED_DIRECTORIES for part in relative.parts) or not path.is_file():
             continue
         if "data" in relative.parts and relative.as_posix() not in INCLUDED_DATA_FILES:
