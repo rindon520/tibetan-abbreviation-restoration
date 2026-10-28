@@ -4,7 +4,7 @@
 
 据作者说明，当前配对数据整理自谢拉编著的《藏文缩略语词典》（民族出版社），并参考项布旺杰的《缩略语词典》（四川民族出版社）。两书的出版年份、版次、具体词条来源对应和整理复核流程尚待补齐；书名、作者和出版社按作者提供记录。当前实证范围为词典来源的配对文本，不构成 OCR 或独立古籍正文基准。
 
-本目录是独立的 GitHub 上传包。论文、真实语料、训练日志、模型权重和第三方分词器不包含在本仓库。现有代码和新增复现入口的来源见 [docs/source_manifest.json](docs/source_manifest.json)。
+本目录是独立的 GitHub 仓库，包含研究代码，以及 `data/` 中的藏文缩写—还原对照语料和藏文字符集。数据文件用途、记录数与读取方式见 [data/README.md](data/README.md)。论文、训练日志、模型权重和第三方分词器不包含在本仓库。现有代码和新增复现入口的来源见 [docs/source_manifest.json](docs/source_manifest.json)。
 
 ## 安装与最小验证
 
@@ -31,7 +31,7 @@ python -m pip install -r requirements-training.txt
 
 ## 正式实验：保留原始行分组
 
-将具有合法使用权限的原始行级配对数据放到本地 `data/Source.txt` 和 `data/Restore.txt`；格式见 [docs/data_format.md](docs/data_format.md)。正式实验使用以下入口：
+仓库已提供原始行级配对数据 `data/Source.txt` 和 `data/Restore.txt`；两文件按相同行号对应，均为带 BOM 的 UTF-8 文本。文件说明见 [data/README.md](data/README.md)，格式与划分约定见 [docs/data_format.md](docs/data_format.md)。正式实验使用以下入口：
 
 ```bash
 python scripts/run_grouped_experiment.py --code-root . --raw-data-dir data --output-dir experiments/grouped_seed42 --stage prepare --seed 42
@@ -93,7 +93,7 @@ python evaluate_predictions.py --predictions predictions.jsonl --output metrics.
 
 ## 绘图复现
 
-当前论文延续原 V21 的六图顺序及单栏叙事；新增 `figures/v21/` 的绘图代码与聚合 CSV/JSON，可从公开聚合数据直接生成图2—6，不依赖私有实验目录。包中不含已渲染的 PDF、PNG、SVG 或原始文本。
+当前论文延续原 V21 的六图顺序及单栏叙事；新增 `figures/v21/` 的绘图代码与聚合 CSV/JSON，可从公开聚合数据直接生成图2—6，不依赖私有实验目录。图件目录不含已渲染的 PDF、PNG、SVG 或逐条原始文本；原始配对语料位于仓库的 `data/` 目录。
 
 ```bash
 python -m pip install -r requirements-figures.txt
@@ -121,6 +121,7 @@ python figures/v21/build_v21_figures.py --output-dir figures/generated/v21
 | `scripts/evaluate_tibnorm_external.py` | 固定版本 TibNorm 外部归一化比较，不复制上游资源 |
 | `scripts/diagnose_frozen_candidates.py`, `scripts/ablate_neural_candidate.py` | 后验候选诊断与去神经控制，保留探索性身份 |
 | `legacy/mt5/` | 早期 mT5 训练、推理和数据分析脚本 |
+| `data/` | 藏文缩写—还原对照语料、藏文字符集及文件说明 |
 | `tests/`, `examples/`, `docs/` | 核心测试、合成示例与复现文档 |
 | `figures/v21/` | 当前 V21 六图稿的图2—6绘图入口与聚合输入 |
 | `figures/scripts/`, `figures/source_data/` | 扩展核查图件代码与聚合指标源表 |
@@ -129,11 +130,11 @@ python figures/v21/build_v21_figures.py --output-dir figures/generated/v21
 
 同时报告字符编辑准确率 CA（`micro_character_accuracy = 1 - micro_cer`）、整段还原准确率 EM（`exact_match`）、字符错误率 micro CER（总编辑距离 / 总参考字符数）、片段错误率（`line_error_rate = 1 - exact_match`）和音节单位错误率。CA 是编辑距离的互补指标，可为负值，不能解释为字符分类准确率；EM 是整段逐码点相等的比例，分母为测试片段数。评估入口终端摘要和完整 JSON 均保留这两种准确率与错误率；终端各率以比例值显示，表格将相应值乘100展示为百分数；百分数满足CA/%=100−CER/%。主方法 CA 为82.71%、EM 为14.26%，两者定义不同。字符多重集重叠分数仅作辅助描述。Unicode 字符计数、标点处理及统计限制见 [docs/reproducibility.md](docs/reproducibility.md)。
 
-原始语料、第三方 `segment-ti` 程序与模型未获确认可公开再分发，因此未打包。默认可使用本仓库音节边界回退；它与外部分词的结果不等价。接口和许可状态见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) 与 [LICENSE_STATUS.md](LICENSE_STATUS.md)。仓库没有替作者选择开源许可证；在权利人选择许可证之前，公开上传不等于授予开源使用权。
+原始配对语料与藏文字符集已收录于 [data/](data/README.md)；收录不自动授予公开再分发或开源使用许可。第三方 `segment-ti` 程序与模型仍未打包。默认可使用本仓库音节边界回退；它与外部分词的结果不等价。接口和许可状态见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) 与 [LICENSE_STATUS.md](LICENSE_STATUS.md)。仓库没有替作者选择开源许可证；在权利人选择许可证之前，公开上传不等于授予开源使用权。
 
 固定版本 TibNorm 的外部比较使用 6,263 个有效缩略词条目及完整正常化规则，资源条件不同于仅在本文训练集学习的方法。结果和限制见 [docs/external_baseline.md](docs/external_baseline.md)；本文不声称首次混合方法或首次藏文缩略词还原。
 
-固定 seed 42、961 条测试句段的结果见 [docs/results.md](docs/results.md)，可核对的聚合数值与文件哈希见 [docs/results_summary.json](docs/results_summary.json)。这里不包含逐条文本或模型权重。
+固定 seed 42、961 条测试句段的结果见 [docs/results.md](docs/results.md)，可核对的聚合数值与文件哈希见 [docs/results_summary.json](docs/results_summary.json)。结果汇总文件不包含逐条文本或模型权重；原始配对文本见 `data/`。
 
 后验完整去神经控制与主方法只相差 2 次字符编辑，现有实证不支持神经候选的必要性。该诊断不替换预先固定的 seed42 主结果，详情与探索性限制见结果说明。
 

@@ -13,7 +13,7 @@ venv/
 Thumbs.db
 
 # Corpora, learned models, predictions and machine-specific outputs
-/data/
+/data/*
 /data_segments_trusted/
 /runs/
 /output/
@@ -33,6 +33,10 @@ selector.json
 *_samples.json
 Source.txt
 Restore.txt
+!/data/README.md
+!/data/Source.txt
+!/data/Restore.txt
+!/data/tibetan_VCC_7387.txt
 !examples/toy/Source.txt
 !examples/toy/Restore.txt
 

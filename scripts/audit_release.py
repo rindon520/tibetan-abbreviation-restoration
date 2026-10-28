@@ -10,10 +10,13 @@ from zipfile import ZIP_DEFLATED, ZipFile
 ROOT = Path(__file__).resolve().parents[1]
 EXCLUDED_DIRECTORIES = {
     ".git", ".venv", ".validation-venv", "venv", "__pycache__", ".pytest_cache",
-    "data", "data_segments_trusted", "runs", "output", "checkpoints", "final_model",
+    "data_segments_trusted", "runs", "output", "checkpoints", "final_model",
     "experiments", "papers", "submission", "archive", "segment-ti", "third_party", "generated",
 }
 DISALLOWED_SUFFIXES = {".pt", ".pth", ".bin", ".safetensors", ".whl", ".log", ".docx", ".pdf", ".png", ".svg", ".exe", ".dll", ".so", ".o", ".zip", ".pyc"}
+INCLUDED_DATA_FILES = {
+    "data/README.md", "data/Source.txt", "data/Restore.txt", "data/tibetan_VCC_7387.txt",
+}
 
 
 def upload_files():
@@ -23,11 +26,15 @@ def upload_files():
         relative = path.relative_to(ROOT)
         if any(part in EXCLUDED_DIRECTORIES for part in relative.parts) or not path.is_file():
             continue
+        if "data" in relative.parts and relative.as_posix() not in INCLUDED_DATA_FILES:
+            continue
         if path.name == "release_audit.local.json":
             continue
         if path.suffix.lower() in DISALLOWED_SUFFIXES or path.name.startswith(".env"):
             violations.append(relative.as_posix())
-        if path.name in {"Source.txt", "Restore.txt"} and relative.parts[:2] != ("examples", "toy"):
+        if (path.name in {"Source.txt", "Restore.txt"}
+                and relative.parts[:2] != ("examples", "toy")
+                and relative.as_posix() not in INCLUDED_DATA_FILES):
             violations.append(relative.as_posix())
         if path.name in {"model.json", "selector.json"} or path.name.endswith(("_predictions.jsonl", "_samples.json")):
             violations.append(relative.as_posix())
